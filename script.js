@@ -8,14 +8,14 @@ function dragStartHandler(ev) {
 }
 
 //onDragover calls this when a dragged element is held over it
-function dragOverHandler(ev) {
+export function dragOverHandler(ev) {
     ev.preventDefault();
     ev.target.classList.add('drop');
     ev.dataTransfer.dropEffect = "move";
 }
 
 //Releasing the dragged element onto a valid target calls this
-function dropHandler(ev) {
+export function dropHandler(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text/id");
     let target = ev.target;
