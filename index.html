@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanbon Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <main class="board">
+
+
+        <div id="columnToDo" class="column ToDo" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+
+            <header id="headerToDo" class="header ToDo">
+                <h2>To-Do</h2>
+                <span class="material-symbols-outlined newCard">add</span>
+            </header>
+
+
+            <article class="card toDo" draggable="true">
+                <div class="cardHead">
+                    <h3>To-Do #1</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div>
+                <p class="taskText">Task to be started</p>
+            </article>
+
+            <article class="card toDo" draggable="true">
+                <div class="cardHead">
+                    <h3>To-Do #2</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div>                
+                <p class="taskText">Just another thing yet to be started</p>
+            </article>
+
+            <article class="card toDo" draggable="true">
+                <div class="cardHead">
+                    <h3>To-Do #3</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">More ideas but not enough time to implement them</p>
+            </article>
+        </div>
+
+
+        <div id="columnInProgress" class="column inProgress" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+
+            <header id="headerInProgress" class="inProgress">
+                <h2>In-Progress</h2>
+                <span class="material-symbols-outlined newCard">add</span>   
+            </header>
+
+
+            <article class="card inProgress" draggable="true">
+                <div class="cardHead">
+                    <h3>In-Progress #1</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">Task you have begun and plan to continue</p>
+            </article>
+
+            <article class="card inProgress" draggable="true">
+                <div class="cardHead">
+                    <h3>In-Progress #2</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">Another task that is still being worked on</p>
+            </article>
+
+            <article class="card inProgress" draggable="true">
+                <div class="cardHead">
+                    <h3>In-Progress #3</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">A third currently in progress task</p>
+            </article>
+        </div>
+
+
+        <div id="columnComplete" class="column complete" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+
+            <header id="headerComplete" class="complete">
+                <h2>Complete</h2>
+                <span class="material-symbols-outlined newCard">add</span>
+            </header>
+
+
+            <article class="card complete" draggable="true">
+                <div class="cardHead">
+                    <h3>Completed #1</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">Task you have completed</p>
+            </article>
+
+            <article class="card complete" draggable="true">
+                <div class="cardHead">
+                    <h3>Completed #2</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">A second completely finished task</p>
+            </article> 
+            
+            <article class="card complete" draggable="true">
+                <div class="cardHead">
+                    <h3>Completed #3</h3>
+                    <span class="material-symbols-outlined editCardIcon">edit</span>
+                </div> 
+                <p class="taskText">And a third finished one</p>
+            </article>
+        </div>
+
+    </main>
+
+    <section class="editArea">
+        <fieldset id="activeEditingArea">
+            <!-- <legend>Currently Editing</legend> -->
+
+            <div class="containerTextArea">
+                <label for="editTitleBox" class="labelTextArea"><h3> Title: </h3></label>
+                <textarea name="newText" id="editTitleBox" class="editBoxes"> </textarea>
+            </div>
+            
+            <div class="containerTextArea">
+            <label for="editTaskBox" class="labelTextArea"><h3>Description:</h3></label>
+            <textarea name="newText" id="editTaskBox" class="editBoxes"> </textarea>
+            </div>
+
+            <div id="editBtns">
+                <label for="submitBtn"> Confirm Changes? </label>
+                <input type="submit" value="Confirm" id="submitBtn" class="inputBtn">
+                <input type="button" value="Cancel" id="cancelBtn" class="inputBtn">
+                <input type="button" value="Delete Task" id="deleteBtn" class="inputBtn">
+            </div>
+
+        </fieldset>
+    </section>
+
+</body>
+</html>

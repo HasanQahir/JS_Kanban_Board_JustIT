@@ -1,0 +1,295 @@
+body{
+    background-color: #040511;
+    color: #dedff6;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.board {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    text-wrap: nowrap;
+    background-color: #9594e3;
+    width: 25%;
+    min-width: 175px;
+    min-height: 350px;
+    margin: 5px 20px;
+}
+
+
+h2 {
+    margin: 0;
+    font-size: 1.4em;
+    line-height: 1.5;
+    padding-left: 10px;
+}
+
+#headerToDo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkred;
+}
+
+#headerInProgress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkgoldenrod;
+}
+
+#headerComplete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: green;
+}
+
+header .material-symbols-outlined {
+    padding: 0;
+    margin: 0 5px;
+    color: white;
+
+    background: none;
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+
+header .material-symbols-outlined:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: #11111199;
+    border-radius: 50%;
+    color: white;
+}
+
+header .material-symbols-outlined:active {
+    cursor: pointer;
+    color: #bdbdbd;
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    background-color: #81258abb;
+    border-radius: 5px;
+    height: 80px;
+    margin: 10px;
+    cursor: grab;
+}
+.cardHead {
+    display: flex; 
+    justify-content: space-between; 
+    margin: 2px;
+}
+
+
+.card h3 {
+    display: inline-block;
+    margin: 0;
+    align-self: center;
+    text-wrap: nowrap;
+    padding-left: 10px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.card p {
+    margin: 0;
+    padding-left: 5px;
+    text-wrap: wrap;
+}
+
+
+.cardHead > .material-symbols-outlined {
+    padding: 4px;
+    margin: 0 2px;
+
+    visibility: hidden;
+    color: white;
+    background: 0;
+    align-self: center;
+
+font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.cardHead > .material-symbols-outlined:hover {
+    visibility: visible;
+    color: #cdcdcd;
+    cursor: pointer;
+}
+
+.cardHead > .material-symbols-outlined:active {
+    border: white 2px solid;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.card:hover {
+    background-color: #505050;
+    border: white 1px dashed;
+
+    .material-symbols-outlined {
+        visibility: visible;
+    };
+}
+
+.card:active {
+    cursor: grabbing;
+}
+
+.column {
+    transition: border 0.1s ease-in;
+}
+
+.column.drop {
+    border: white 2px dashed;
+    margin: 3px 18px;
+}
+
+.card {
+    transition: all 0.2s ease-out;
+}
+
+.card.drop {
+    pointer-events: none;
+}
+
+.card.dragging {
+    opacity: 0.5;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+
+.editArea {
+    display: none;
+    margin: 20px 5%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+#activeEditingArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 600px;
+    width: 100%;
+    border: #bc88ffdd 3px solid;
+    border-radius: 20px;
+    padding: 0;
+    margin: 10px;
+    background-color:#1b317ace;
+}
+
+.containerTextArea{
+    display: flex; 
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.labelTextArea{
+    display: inline;
+    padding: 10px;
+    h3 {
+        display: inline;
+        font-size: 1.2em;
+    }
+}
+
+.editBoxes {
+    max-width: 500px;
+    width: 100%;
+    height: 70px; 
+    resize: none;
+    margin-right: 10px;
+    padding: 5px;
+    border: 0;
+    overflow: scroll;
+    border-radius: 10px;
+    background-color: #e0e8ff;
+}
+
+#editTitleBox {
+    font-size: 1.8em;
+    text-wrap: nowrap;
+    height: 30px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+#editTaskBox {
+    font-size: 1.2em;
+}
+
+#editBtns {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-top: rgba(120, 121, 121, 0.32) 2px solid;
+    padding: 10px;
+
+    label { 
+        font-size: 20px;
+    }
+}
+
+.inputBtn {
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 5px;
+    background-color:#e0e8ef;
+    cursor: pointer;
+}
+
+#deleteBtn {
+    background-color: #cc1533;
+    color: white;
+}
+
+#deleteBtn:hover {
+    background-color: #ac0523;
+}
+
+#deleteBtn:active {
+    background-color: #8c0513;
+}
+
+.inputBtn:hover {
+    background-color: #cdd1d7;
+}
+
+.inputBtn:active {
+background-color: #bdbdbd;
+}
