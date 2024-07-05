@@ -1,4 +1,30 @@
-import {Kanbon_Card} from "./modules/card.js";
+class Kanbon_Card {
+
+    constructor(title = "", task = "", column_Type = "", column_Position = -1) {
+
+        this.title = title;
+        this.task = task;
+        this.columnType = column_Type;
+        this.columnPos = column_Position;
+    }
+
+    convertToDOMObject() {
+        const newDOMCard = document.createElement('article')
+        const head = document.createElement('div');
+        const h3 = document.createElement('h3');
+        const editButton = document.createElement('span');
+        const p = document.createElement('p');
+
+        h3.innerText = this.title;
+        editButton.innerHTML = 'edit';
+        p.innerText = this.task
+
+        head.append(h3, editButton);
+        newDOMCard.append(head, p);
+
+        return newDOMCard;
+    }
+}
 
 //Store data about the selected card and give it a special class
 function dragStartHandler(ev) {
@@ -8,14 +34,14 @@ function dragStartHandler(ev) {
 }
 
 //onDragover calls this when a dragged element is held over it
-export function dragOverHandler(ev) {
+function dragOverHandler(ev) {
     ev.preventDefault();
     ev.target.classList.add('drop');
     ev.dataTransfer.dropEffect = "move";
 }
 
 //Releasing the dragged element onto a valid target calls this
-export function dropHandler(ev) {
+function dropHandler(ev) {
     ev.preventDefault();
     let data = ev.dataTransfer.getData("text/id");
     let target = ev.target;
