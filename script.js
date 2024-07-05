@@ -226,25 +226,3 @@ window.addEventListener("DOMContentLoaded", function () {
     deleteBtn.addEventListener('click', deleteCard);
 });
 
-
-
-  
-    //! Priority Core Features:
-    //// Include text in task, and a way to update it
-    //? Text included in tasks AND can be updated
-
-    //TODO: Add Local Storage so tasks are saved
-
-    //_ Core Features:
-    //// Add button and text input for more to-do tasks.
-    //? Completed in the process of adding text updating
-
-    //// Add a way to delete a task
-    //? May now delete a task when editing. Does not include warning prompt
-
-    //TODO: Column generation and customisation
-
-    //* Additional Features/Improvements:
-    //TODO: Increased width/size; More colourful + interesting background; Customisable colours for each heading
-    //TODO: Give tasks 'Priority' in list, sorts high-to-low. Should stand out in list, have custom icon/colours.
-    //? Cards are dropped at mouse cursor, comparing position to the centre of other tasks in column.
